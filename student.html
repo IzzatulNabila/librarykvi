@@ -12,7 +12,7 @@
     <img src="header.png" alt="Kolej Vokasional Ipoh Logo" class="header-logo">
   </div>
 
-  <!-- Navigation (unchanged) -->
+  <!-- Navigation -->
   <div class="topnav">
     <a href="homepage.html">Home</a>
     <a href="bookcatalog.html">Book Catalog</a>
@@ -22,7 +22,7 @@
       <div class="dropdown-content">
         <a href="student.html">Student Registration</a>
         <a href="staff.html">Staff Registration</a>
-        <a href="borrowing-rules.html">Borrowing Rules</a>
+        <a href="borrowing.html">Borrowing Rules</a>
       </div>
     </div>
 
@@ -45,24 +45,55 @@
       <h1>Student Membership Registration</h1>
       <p>Please complete the form below to register as a student member of the KVI Library.</p>
 
-      <form class="registration-form">
+      <!-- ✅ Working form using FormSubmit -->
+      <form id="student-form" class="registration-form">
+        <input type="hidden" name="_captcha" value="false">
+
         <label for="studentName">Full Name:</label>
-        <input type="text" id="studentName" name="studentName" required>
+        <input type="text" id="studentName" name="Full Name" required>
 
         <label for="studentID">Student ID:</label>
-        <input type="text" id="studentID" name="studentID" required>
+        <input type="text" id="studentID" name="Student ID" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="Email" required>
 
         <label for="class">Class / Program:</label>
-        <input type="text" id="class" name="class" required>
+        <input type="text" id="class" name="Class" required>
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="Password" required>
 
         <button type="submit" class="button">Submit</button>
       </form>
+
+      <!-- ✅ JavaScript for AJAX submit and popup -->
+      <script>
+        const form = document.getElementById('student-form');
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          fetch("https://formsubmit.co/ajax/2024124897@student.uitm.edu.my", {
+            method: "POST",
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              alert("✅ Registration submitted successfully!");
+              form.reset();
+            } else {
+              alert("❌ Failed to submit. Please try again.");
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            alert("❌ An error occurred. Please try again.");
+          });
+        });
+      </script>
     </div>
   </div>
 
