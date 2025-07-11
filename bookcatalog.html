@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Catalog - KVI Library</title>
+  <link rel="stylesheet" href="book-catalog.css">
+  <script>
+    function filterBooks() {
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
+      const books = document.querySelectorAll(".book-card");
+
+      books.forEach(book => {
+        const titleElement = book.querySelector("h4");
+        if (!titleElement) {
+          book.style.display = "none";
+          return;
+        }
+        const title = titleElement.textContent.toLowerCase();
+        if (title.includes(input)) {
+          book.style.display = "block";
+        } else {
+          book.style.display = "none";
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <div class="header">
+    <img src="header.png" alt="Kolej Vokasional Ipoh Logo" class="header-logo">
+  </div>
+
+  <div class="topnav">
+    <a href="homepage.html">Home</a>
+    <a href="bookcatalog.html">Book Catalog</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Membership ▾</button>
+      <div class="dropdown-content">
+        <a href="student.html">Student Registration</a>
+        <a href="staff.html">Staff Registration</a>
+        <a href="borrowing.html">Borrowing Rules</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact Us</a>
+
+    <div class="dropdown" style="float:right">
+      <button class="dropbtn">About ▾</button>
+      <div class="dropdown-content">
+        <a href="background.html">Background</a>
+        <a href="aboutme.html">Me</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>Book Catalog</h2>
+        <p>Browse through our featured books available at the Kolej Vokasional Ipoh Library. More titles are available in our physical and digital collections.</p>
+
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search by title...">
+          <button onclick="filterBooks()">Search</button>
+        </div>
+
+        <div class="catalog-grid">
+          <div class="book-card">
+            <h4>Introduction to Programming</h4>
+            <p><strong>Author:</strong> M. Reza</p>
+            <p><strong>Category:</strong> Computer Science</p>
+          </div>
+
+          <div class="book-card">
+            <h4>Understanding Physics</h4>
+            <p><strong>Author:</strong> A. Tan</p>
+            <p><strong>Category:</strong> Science</p>
+          </div>
+
+          <div class="book-card">
+            <h4>Effective Communication</h4>
+            <p><strong>Author:</strong> L. Wong</p>
+            <p><strong>Category:</strong> Language</p>
+          </div>
+
+          <div class="book-card">
+            <h4>Engineering Mechanics</h4>
+            <p><strong>Author:</strong> J. Kumar</p>
+            <p><strong>Category:</strong> Engineering</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <a href="#" class="button">View Full Catalog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Kolej Vokasional Ipoh Library. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
