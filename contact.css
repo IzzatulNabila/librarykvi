@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation */
+.topnav {
+  background-color: #004080;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.topnav a,
+.dropbtn {
+  color: white;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #003060;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #004080;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-spacer {
+  height: 20px;
+}
+
+/* Layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 10%;
+  gap: 20px;
+}
+
+.leftcolumn {
+  flex: 3;
+}
+
+.rightcolumn {
+  flex: 1;
+}
+
+/* Card */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  color: #004080;
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.registration-form label {
+  font-weight: 600;
+  color: #004080;
+}
+
+.registration-form input,
+.registration-form textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.registration-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.registration-form input:focus,
+.registration-form textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+/* Button */
+.button {
+  background-color: #004080;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #003060;
+}
+
+/* Footer */
+.footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+/* Divider (optional for content pages like Contact Us) */
+.card hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 40px 0;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+    margin: 0 5%;
+  }
+}

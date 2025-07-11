@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Registration - KVI Library</title>
+  <link rel="stylesheet" href="membership.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img src="header.png" alt="Kolej Vokasional Ipoh Logo" class="header-logo">
+  </div>
+
+  <!-- Navigation -->
+  <div class="topnav">
+    <a href="homepage.html">Home</a>
+    <a href="bookcatalog.html">Book Catalog</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Membership ▾</button>
+      <div class="dropdown-content">
+        <a href="student.html">Student Registration</a>
+        <a href="staff.html">Staff Registration</a>
+        <a href="borrowing.html">Borrowing Rules</a>
+      </div>
+    </div>
+
+    <a href="contact.html">Contact Us</a>
+
+    <div class="dropdown" style="float:right">
+      <button class="dropbtn">About ▾</button>
+      <div class="dropdown-content">
+        <a href="background.html">Background</a>
+        <a href="aboutme.html">Me</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-spacer"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="card">
+      <h1>Staff Membership Registration</h1>
+      <p>Please complete the form below to register as a staff member of the KVI Library.</p>
+
+      <form class="registration-form">
+        <label for="staffName">Full Name:</label>
+        <input type="text" id="staffName" name="staffName" required>
+
+        <label for="staffID">Staff ID:</label>
+        <input type="text" id="staffID" name="staffID" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p style="text-align:center;">© 2025 Kolej Vokasional Ipoh Library. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
